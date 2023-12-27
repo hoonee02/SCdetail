@@ -1,2 +1,2 @@
-# SCdetail
-to test for starcitizen Data.p4k
+# UAV project
+it is a discord bot
