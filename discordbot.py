@@ -6,8 +6,8 @@ class myClient(discord.Client):
     async def on_message(self,message):
         print(f'Message form {message.author}: {message.coontent}')
 
-intents = discrod.intents.default()
+intents = discord.intents.default()
 intents.message_content = Ture
 
-client = Myclient(intents=intents)
+client = myClient(intents=intents)
 client.run('c7494e25b8b8def03d1a8c59c0d13d5528636073ec92054e6349840769f5d7a2')
