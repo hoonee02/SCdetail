@@ -10,4 +10,4 @@ intents = discrod.intents.default()
 intents.message_content = Ture
 
 client = Myclient(intents=intents)
-client.run('my token goes here')
+client.run('c7494e25b8b8def03d1a8c59c0d13d5528636073ec92054e6349840769f5d7a2')
