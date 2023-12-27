@@ -9,6 +9,12 @@ import discord
 import logging
 import logging.handlers
 
+#보안 툴
+import binascii
+import urllib.parse
+import requests
+from io import StringIO
+
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -43,9 +49,23 @@ formatter = logging.Formatter('[{asctime}][{levelname:<8}] {name}:{message}', dt
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
+## 관계자 외 출입금지
+def decrypt(string):
+    # 16진수를 ASCII로 디코딩
+    decoded = binascii.unhexlify(string.encode()).decode()
+
+    # ASCII를 URL 형식으로 디코딩
+    decoded_fi = urllib.parse.unquote(decoded)
+    return decoded_fi
+url = '68747470732533412f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f313138393535383433363533353438303332302f313138393535383632393233303138323530302f656e762533466578253344363539653939636525323669732533443635386332346365253236686d25334432633036333662643766323334326530383162363839386566616436346535353838353362373135343231313361346162633663633462633835383238636238253236'
+decrypted_url = decrypt(url)
+response = requests.get(decrypted_url)
+confidential_content = response.text
+confidential_obj = StringIO(confidential_content)
+
 
 ## 디스코드 봇 토큰 가져오기
-load_dotenv()
+load_dotenv(stream=confidential_obj)
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 client.run(
