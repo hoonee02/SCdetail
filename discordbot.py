@@ -7,7 +7,7 @@ class myClient(discord.Client):
         print(f'Message form {message.author}: {message.coontent}')
 
 intents = discord.Intents.default()
-intents.message_content = Ture
+intents.message_content = True
 
 client = myClient(intents=intents)
 client.run('c7494e25b8b8def03d1a8c59c0d13d5528636073ec92054e6349840769f5d7a2')
