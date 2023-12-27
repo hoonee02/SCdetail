@@ -1,3 +1,8 @@
+#토큰을 위한 툴
+from dotenv import load_dotenv
+import os
+
+#디스코드패키지
 import discord
 
 intents = discord.Intents.default()
@@ -17,4 +22,4 @@ async def on_message(message):
     if meassage.content.startswith('$hello'):
         await message.channel.send('Hello!')
 
-client.run("MTE4OTQ2MTYyNjk3NDM4NDIwOQ.GfqVXW.-B5ysOsMy8-gNTDyz_DRPzOqMqfUdc8d5RG0nE")
+client.run( )
