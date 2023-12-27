@@ -6,7 +6,7 @@ class myClient(discord.Client):
     async def on_message(self,message):
         print(f'Message form {message.author}: {message.coontent}')
 
-intents = discord.intents.default()
+intents = discord.Intents.default()
 intents.message_content = Ture
 
 client = myClient(intents=intents)
