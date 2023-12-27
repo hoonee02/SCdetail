@@ -1,9 +1,9 @@
 import discord
 
-intents = discrod.intents.default()
+intents = discord.intents.default()
 intents.message_content = True
 
-client = discrod.Client(intents=intents)
+client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
